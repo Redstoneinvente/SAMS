@@ -8,8 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    
     <style>
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
       :root{
         --primary: #38661D;
         --secondary: #58664F;
@@ -23,31 +29,63 @@
         --onSecondaryContainer: #161A14;
         --onPrimaryContainer: #0E1A07;
         --neutralVariant: #5B6056;
+        --onBackground: #191A18;
+        --tertiary: #186466;
+
+        --light: 300px;
+        --regular: 400px;
+        --medium: 500px;
+        --semiBold: 600px;
       }
 
       body {
         background-color: var(--background);
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Rubik', sans-serif, 'MaterialIcons';
+      }
+
+      p {
+        color: var(--secondary);
+        font-family: 'Rubik', sans-serif, 'MaterialIcons';
+        padding-left: 2%;
+        font-weight: var(--medium);
       }
 
       h1 {
         color: var(--primary);
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Rubik', sans-serif,'MaterialIcons';
+        padding-left: 2%;
       }
 
       h2 {
         color: var(--secondary);
-        font-size: small;
+        font-size:medium;
         text-indent: 0px;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Rubik', sans-serif,'MaterialIcons';
+        padding-left: 2%;
       }
 
       h3 {
         color: var(--secondary);
+        font-size: medium;
+        text-indent: 0px;
+        font-family: 'Rubik', sans-serif,'MaterialIcons';
+        padding-left: 2%;
+      }
+
+      h4 {
+        color: var(--secondary);
         font-size: small;
         text-indent: 0px;
-        font-weight: 400px;
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Rubik', sans-serif,'MaterialIcons';
+        padding-left: 2%;
+      }
+
+      h5 {
+        color: var(--tertiary);
+        font-size: small;
+        text-indent: 0px;
+        font-family: 'Rubik', sans-serif,'MaterialIcons';
+        padding-left: 2%;
       }
 
       div.subSection {
@@ -63,7 +101,12 @@
       label {
         color: var(--primary); 
         font-size:15px;
-        font-weight: 500;
+        font-weight: var(--medium);
+      }
+
+      li {
+        color: var(--onSecondaryContainer); 
+        font-weight: var(--medium);
       }
 
       div.homeBlock {
@@ -84,13 +127,54 @@
       div.homeBlockContents {
         margin: 2%;
       }
+
+      img {
+        max-width: 100%;
+        max-height: 450px;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+
+        display: block;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        border-radius: 30px;
+
+        border-color: var(--outline);
+        border-style: solid;
+
+        margin-bottom: 25px;
+      }
+
+      ol {
+        margin-bottom: 50px;
+      }
+
+      ol li::before {
+        color: var(--tertiary); /* Change the color */
+      }
+
+      ul {
+        list-style: none; /* Remove default bullets */
+      }
+      
+      ul li::before {
+        content: "\2605";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+        color: var(--tertiary); /* Change the color */
+        font-weight: bold; /* If you want it to be bold */
+        display: inline-block; /* Needed to add space between the bullet and the text */
+        width: 1em; /* Also needed for space (tweak if needed) */
+        margin-left: -1em; /* Also needed for space (tweak if needed) */
+      }
     </style>
   </head>
 
   <body>
     <div class="homeBlock">
       <div class="homeBlockContents">
-        <h1 style="color: white;">SAMS User Guide</h1>
+        <h1 style="color: white;padding-left: 0%;">SAMS User Guide</h1>
         <label style="color: white; text-align:justify; font-weight:300px">
           Introducing the School Attendance Management System (SAMS) , an effective way of handling student's attendance and behaviour in the educational sector. As my latest flagship project, it showcases the culmination of my extensive experience in UI/UX design and my ability to craft innovative software solutions for use in a real world setting.
         </label>
@@ -100,9 +184,86 @@
 
   <div class="subSection">
     <label style="color: var(--secondary); font-size:10px;line-height: inherit;">On this page</label>
-    <label>Admin Guide</label>
-    <label>Teacher Guide</label>
-    <label>Parent Guide</label>
-    <label>Student Guide</label>
+    <label onclick="JumpToAdminSection()">Admin Guide</label>
+    <label onclick="JumpToTeacherSection()">Teacher Guide</label>
+    <label onclick="JumpToParentSection()">Parent Guide</label>
+    <label onclick="JumpToStudentSection()">Student Guide</label>
   </div>
+
+  <section id="adminGuide">
+    <h1 style="font-size:xx-large">Admin Guide</h1>
+  </section>
+
+  <section id="teacherGuide">
+    <h1 style="font-size:xx-large">Teacher Guide</h1>
+    <p>Welcome to the Teacher Guide section of the application! This guide will walk you through the steps to effectively use the features available for managing your class and accessing important information.</p>
+
+    <img src="imgs/loginPage.png">
+
+    <h2>Logging In (First Time Only)</h2>
+    <ol>
+        <li>Open the application and click on the "Login" button.</li>
+        <li>Enter your provided credentials (username and password) to access your account.</li>
+    </ol>
+
+    <h1>Homepage Navigation</h1>
+    <img src="imgs/homeScreen.png">
+    <p>On the homepage, you'll find a range of features designed to help you manage your class efficiently.</p>
+
+    <h2>Attendance Management</h2>
+    <img src="imgs/attendanceTeacher.png">
+    <ol>
+        <li>Click on the "Manage Class" option under "Current Class."</li>
+        <li>Here, you'll see a list of students in your class along with their attendance status.</li>
+        <li>To mark a student as present or absent, simply check or uncheck the corresponding box next to their name.</li>
+        <li>To load the full class list, click on the eye icon.</li>
+        <li>Utilize the search bar to quickly find specific students by entering their names.</li>
+        <li>If you need to generate attendance reports, select a student to view their individual attendance history.</li>
+    </ol>
+
+    <h2>Timetable Viewing</h2>
+    <img src="imgs/timetableTeacher.png">
+    <ol>
+        <li>On the homepage, locate the "View Timetable" option.</li>
+        <li>Click on it to access your weekly timetable.</li>
+        <li>Here, you'll be able to view your schedule for each day of the week, including class timings and subjects.</li>
+    </ol>
+
+    <h2>Tips for Effective Use</h2>
+    <ul>
+        <li>Keep your attendance records up to date to ensure accurate reporting.</li>
+        <li>Utilize the search bar to quickly find specific students within your class.</li>
+        <li>Regularly check your weekly timetable to stay organized and prepared for your classes.</li>
+    </ul>
+
+    <h5>Remember, this guide provides an overview of the key features available in the Teacher Guide section. If you have any questions or encounter any issues while using the application, feel free to reach out to our support team for assistance.</h5>
+
+    <h5>Happy teaching and managing your class with our application!</h5>
+  </section>
+
+  <section id="parentGuide">
+    <h1 style="font-size:xx-large">Parent Guide</h1>
+  </section>
+
+  <section id="studentGuide">
+    <h1 style="font-size:xx-large">Student Guide</h1>
+  </section>
+
+  <script>    
+    function JumpToAdminSection() {
+      window.location.href="#adminGuide";
+    }
+
+    function JumpToTeacherSection() {
+      window.location.href="#teacherGuide";
+    }
+
+    function JumpToParentSection() {
+      window.location.href="#parentGuide";
+    }
+
+    function JumpToStudentSection() {
+      window.location.href="#studentGuide";
+    }
+    </script>
 </html>

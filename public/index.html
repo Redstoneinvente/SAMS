@@ -148,8 +148,29 @@
         margin-bottom: 25px;
       }
 
+      video {
+        max-width: 100%;
+        max-height: 450px;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+
+        display: block;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        border-radius: 30px;
+
+        border-color: var(--outline);
+        border-style: solid;
+
+        margin-bottom: 25px;
+      }
+
       ol {
         margin-bottom: 50px;
+        margin-left: 2%;
       }
 
       ol li::before {
@@ -158,6 +179,7 @@
 
       ul {
         list-style: none; /* Remove default bullets */
+        margin-left: 2%;
       }
       
       ul li::before {
@@ -198,7 +220,8 @@
     <h1 style="font-size:xx-large">Teacher Guide</h1>
     <p>Welcome to the Teacher Guide section of the application! This guide will walk you through the steps to effectively use the features available for managing your class and accessing important information.</p>
 
-    <img src="imgs/loginPage.png">
+    <!-- <img src="imgs/loginPage.png"> -->
+    <video autoplay loop controls><source src="imgs/loginVid.mp4" type="video/mp4"></video>
 
     <h2>Logging In (First Time Only)</h2>
     <ol>
@@ -211,7 +234,8 @@
     <p>On the homepage, you'll find a range of features designed to help you manage your class efficiently.</p>
 
     <h2>Attendance Management</h2>
-    <img src="imgs/attendanceTeacher.png">
+    <!-- <img src="imgs/attendanceTeacher.png"> -->
+    <video autoplay loop controls><source src="imgs/manageClassVid.mp4" type="video/mp4"></video>
     <ol>
         <li>Click on the "Manage Class" option under "Current Class."</li>
         <li>Here, you'll see a list of students in your class along with their attendance status.</li>

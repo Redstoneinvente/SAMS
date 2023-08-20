@@ -3,87 +3,106 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>SAMS User Guide</title>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.2.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.2.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.2.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.2.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.2.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.2.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.2.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.2.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.2.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.2.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
+    <style>
+      :root{
+        --primary: #38661D;
+        --secondary: #58664F;
+        --background: #F7FCEF;
+        --surfaceVariant: #DAE6CE;
+        --surfaceBright: #F5FAED;
+        --surfaceDim: #D9DED2;
+        --onSurface: #191A18;
+        --surface: #F7FCEF;
+        --outline: #798072;
+        --onSecondaryContainer: #161A14;
+        --onPrimaryContainer: #0E1A07;
+        --neutralVariant: #5B6056;
+      }
+
+      body {
+        background-color: var(--background);
+        font-family: 'Rubik', sans-serif;
+      }
+
+      h1 {
+        color: var(--primary);
+        font-family: 'Rubik', sans-serif;
+      }
+
+      h2 {
+        color: var(--secondary);
+        font-size: small;
+        text-indent: 0px;
+        font-family: 'Rubik', sans-serif;
+      }
+
+      h3 {
+        color: var(--secondary);
+        font-size: small;
+        text-indent: 0px;
+        font-weight: 400px;
+        font-family: 'Rubik', sans-serif;
+      }
+
+      div.subSection {
+        max-width: 250px;
+        background-color: var(--surface);
+        display:grid;
+        line-height:2;
+
+        padding-top: 10px;
+        padding-left: 2%;
+      }
+
+      label {
+        color: var(--primary); 
+        font-size:15px;
+        font-weight: 500;
+      }
+
+      div.homeBlock {
+        max-width: 100%;
+        height: 300px;
+        background-image: url("imgs/homePageTop.png");
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+
+        border-radius: 30px;
+
+        display: flex;
+
+        align-items: center;
+      }
+
+      div.homeBlockContents {
+        margin: 2%;
       }
     </style>
   </head>
+
   <body>
-    <div id="message">
-      <h2>Welcome Homeeeeeeeeeeeee!</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <div class="homeBlock">
+      <div class="homeBlockContents">
+        <h1 style="color: white;">SAMS User Guide</h1>
+        <label style="color: white; text-align:justify; font-weight:300px">
+          Introducing the School Attendance Management System (SAMS) , an effective way of handling student's attendance and behaviour in the educational sector. As my latest flagship project, it showcases the culmination of my extensive experience in UI/UX design and my ability to craft innovative software solutions for use in a real world setting.
+        </label>
+      </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
   </body>
+
+  <div class="subSection">
+    <label style="color: var(--secondary); font-size:10px;line-height: inherit;">On this page</label>
+    <label>Admin Guide</label>
+    <label>Teacher Guide</label>
+    <label>Parent Guide</label>
+    <label>Student Guide</label>
+  </div>
 </html>

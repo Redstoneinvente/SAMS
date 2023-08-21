@@ -221,7 +221,15 @@
 
         border-radius: 16px;
 
-        display: none;
+        opacity: 0;
+
+        z-index: 10;
+
+        transition: opacity 0.25s ease-in-out;
+
+        -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
       }
 
       div.toTopButton {
@@ -471,9 +479,9 @@
  
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
+        mybutton.style.opacity = 1;
       } else {
-        mybutton.style.display = "none";
+        mybutton.style.opacity = 0;
       }
     }
 

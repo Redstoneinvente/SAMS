@@ -9,15 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
-    
-    <style>
-      
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200" />
+    <style>      
       html {
         scroll-behavior: smooth;
       }
       
       :root{
-        --primary: #38661D;
+        --primary: #38661d;
         --secondary: #58664F;
         --background: #F7FCEF;
         --surfaceVariant: #DAE6CE;
@@ -31,11 +30,14 @@
         --neutralVariant: #5B6056;
         --onBackground: #191A18;
         --tertiary: #186466;
+        --primaryContainer: #7FE642;
 
         --light: 300px;
         --regular: 400px;
         --medium: 500px;
         --semiBold: 600px;
+
+        --level3Elevation: 0.11;
       }
 
       body {
@@ -209,10 +211,45 @@
         width: 1em; /* Also needed for space (tweak if needed) */
         margin-left: -1em; /* Also needed for space (tweak if needed) */
       }
+
+      div.bottomRight {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        padding-right: 1%;
+        padding-bottom: 1%;
+
+        border-radius: 16px;
+
+        display: none;
+      }
+
+      div.toTopButton {
+        background-color: var(--primaryContainer);
+        width: 56px;
+        height: 56px;
+
+        justify-items: center;
+
+        color:var(--onPrimaryContainer);
+
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        border-radius: 16px;
+      }
+
+      div.primaryOverlayLvl3 {
+        width: 100%;
+        height: 100%;
+
+        background-color: rgba(56, 102, 29, --level3Elevation);
+
+        border-radius: 16px;
+      }
     </style>
   </head>
 
-  <body>
+  <body id="topCard">
     <div class="homeBlock">
       <div class="homeBlockContents">
         <h1 style="color: white;padding-left: 0%;">SAMS User Guide</h1>
@@ -222,6 +259,17 @@
       </div>
     </div>
   </body>
+
+  <div class="bottomRight" id="toTopButton">
+    <div class="toTopButton" onclick="JumpToTop()">
+      <div class="primaryOverlayLvl3">
+        <span class="material-symbols-rounded" style="text-align:center;display:block;height:100%;padding:16px;font-size:24px;">
+          vertical_align_top
+        </span>
+      </div>
+    </div>
+  </div>
+
 
   <div class="subSection">
     <label style="color: var(--secondary); font-size:10px;line-height: inherit;">On this page</label>
@@ -415,6 +463,20 @@
 
 
   <script>    
+    // Get the button:
+    let mybutton = document.getElementById("toTopButton");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+ 
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
     function JumpToAdminSection() {
       window.location.href="#adminGuide";
     }
@@ -429,6 +491,11 @@
 
     function JumpToStudentSection() {
       window.location.href="#studentGuide";
+    }
+
+    function JumpToTop(){
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
     </script>
 </html>

@@ -288,6 +288,10 @@
     <label onclick="JumpToStudentSection()">Student Guide</label>
   </div>
 
+  <section id="installationGuide">
+    <h1 style="font-size:xx-large">Installation & Setup</h1>
+  </section>
+
   <section id="adminGuide">
     <h1 style="font-size:xx-large">Admin Guide</h1>
     <p>Welcome to the Admin Guide section of the application! This guide will provide you with step-by-step instructions on how to navigate and effectively use the features available for managing the entire school and accessing important information.</p>
@@ -484,6 +488,10 @@
       } else {
         mybutton.style.opacity = 0;
       }
+    }
+
+    function JumpToInstallation() {
+      window.location.href="#installationGuide";
     }
 
     function JumpToAdminSection() {
